@@ -8,8 +8,10 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 puts "Cleaning the DB..."
-Owner.destroy_all
+Review.destroy_all
+Favourite.destroy_all
 Car.destroy_all
+Owner.destroy_all
 
 puts "Creating owners..."
 owner1 = Owner.create!(nickname: "Ife500")
@@ -19,9 +21,9 @@ owner4 = Owner.create!(nickname: "Schmuck")
 
 puts "Creating cars..."
 
-Car.create!(brand: "Ferrari", model: "Testarossa", fuel: "Petrol", year: 1995, owner: owner1)
-Car.create!(brand: "Mercedes", model: "300SL Roadster", fuel: "Petrol", year: 1985, owner: owner2)
-Car.create!(brand: "Bentley", model: "Bentayga", fuel: "Diesel", year: 2019, owner: owner3)
-Car.create!(brand: "Aston Martin", model: "DB5", fuel: "Petrol", year: 1967, owner: owner4)
+Car.create!(brand: "Ferrari", model: "Testarossa", fuel: "Petrol", year: 1995, owner: owner1, image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/1991_Ferrari_Testarossa_4.9.jpg/1920px-1991_Ferrari_Testarossa_4.9.jpg')
+Car.create!(brand: "Mercedes", model: "300SL Roadster", fuel: "Petrol", year: 1985, owner: owner2, image_url: 'https://www.hk-engineering.com/cars-extern-sales/image-thumb__34060__website/1119_36121394786891729474~-~2000w.jpeg')
+Car.create!(brand: "Bentley", model: "Bentayga", fuel: "Diesel", year: 2019, owner: owner3, image_url: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/Bentley_Bentayga_V8_%28FL%29_IMG_0005.jpg')
+Car.create!(brand: "Aston Martin", model: "DB5", fuel: "Petrol", year: 1967, owner: owner4, image_url: 'https://static.wikia.nocookie.net/jamesbond/images/8/87/DB5.png/revision/latest?cb=20200104145307')
 
 puts "Done #{Owner.count} owners and #{Car.count} cars created"

@@ -3,5 +3,6 @@
 <% @cars.each do |car| %>
     <%= car.brand %>
     <%= car.model %>
+    <%= image_tag car.image_url %>
     <hr>
 <% end %>
